@@ -31,6 +31,9 @@ namespace Okex.Net.RestObjects.Funding
         [JsonProperty("to")]
         public string To { get; set; }
 
+        [JsonProperty("tag")]
+        public string Tag { get; set; }
+
         [JsonProperty("fee")]
         public decimal Fee { get; set; }
 
