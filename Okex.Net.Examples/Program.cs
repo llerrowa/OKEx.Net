@@ -110,7 +110,7 @@ namespace Okex.Net.Examples
             var funding_05 = api.GetDepositAddress("BTC");
             var funding_06 = api.GetDepositAddress("USDT");
             var funding_07 = api.GetDepositHistory("USDT");
-            var funding_08 = api.Withdraw("USDT", 100.0m, OkexWithdrawalDestination.DigitalCurrencyAddress, "toAddress", "password", 1.0m, "USDT-TRC20");
+            var funding_08 = api.Withdraw("USDT", 100.0m, OkexWithdrawalDestination.DigitalCurrencyAddress, "toAddress", 1.0m, "USDT-TRC20");
             var funding_09 = api.GetWithdrawalHistory("USDT");
             var funding_10 = api.PiggyBankAction("USDT", 10.0m, OkexPiggyBankActionSide.Purchase);
             var funding_11 = api.PiggyBankBalance();

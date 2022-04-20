@@ -287,7 +287,6 @@ namespace Okex.Net
         /// <param name="amount">Amount</param>
         /// <param name="destination">Withdrawal destination address</param>
         /// <param name="toAddress">Verified digital currency address, email or mobile number. Some digital currency addresses are formatted as 'address+tag', e.g. 'ARDOR-7JF3-8F2E-QUWZ-CAN7F:123456'</param>
-        /// <param name="password">Trade password</param>
         /// <param name="fee">Transaction fee</param>
         /// <param name="chain">Chain name. There are multiple chains under some currencies, such as USDT has USDT-ERC20, USDT-TRC20, and USDT-Omni. If this parameter is not filled in because it is not available, it will default to the main chain.</param>
         /// <param name="ct">Cancellation Token</param>
@@ -297,7 +296,6 @@ namespace Okex.Net
             decimal amount,
             OkexWithdrawalDestination destination,
             string toAddress,
-            string password,
             decimal fee,
             string chain = null,
             CancellationToken ct = default) => Withdraw_Async(
@@ -305,7 +303,6 @@ namespace Okex.Net
             amount,
             destination,
             toAddress,
-            password,
             fee,
             chain,
             ct).Result;
@@ -316,7 +313,6 @@ namespace Okex.Net
         /// <param name="amount">Amount</param>
         /// <param name="destination">Withdrawal destination address</param>
         /// <param name="toAddress">Verified digital currency address, email or mobile number. Some digital currency addresses are formatted as 'address+tag', e.g. 'ARDOR-7JF3-8F2E-QUWZ-CAN7F:123456'</param>
-        /// <param name="password">Trade password</param>
         /// <param name="fee">Transaction fee</param>
         /// <param name="chain">Chain name. There are multiple chains under some currencies, such as USDT has USDT-ERC20, USDT-TRC20, and USDT-Omni. If this parameter is not filled in because it is not available, it will default to the main chain.</param>
         /// <param name="ct">Cancellation Token</param>
@@ -326,7 +322,6 @@ namespace Okex.Net
             decimal amount,
             OkexWithdrawalDestination destination,
             string toAddress,
-            string password,
             decimal fee,
             string chain = null,
             CancellationToken ct = default)
@@ -336,7 +331,6 @@ namespace Okex.Net
                 { "amt",amount.ToString(OkexGlobals.OkexCultureInfo)},
                 { "dest", JsonConvert.SerializeObject(destination, new WithdrawalDestinationConverter(false)) },
                 { "toAddr",toAddress},
-                { "pwd",password},
                 { "fee",fee   .ToString(OkexGlobals.OkexCultureInfo)},
             };
             parameters.AddOptionalParameter("chain", chain);
